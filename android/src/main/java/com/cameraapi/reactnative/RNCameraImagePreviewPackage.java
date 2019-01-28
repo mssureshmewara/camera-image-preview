@@ -1,6 +1,7 @@
 
 package com.cameraapi.reactnative;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +14,10 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class RNCameraImagePreviewPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNCameraImagePreviewModule(reactContext));
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new Camera(reactContext));
+        modules.add((new RNCameraImagePreviewModule(reactContext)));
+      return modules;
     }
 
     // Deprecated from RN 0.47
