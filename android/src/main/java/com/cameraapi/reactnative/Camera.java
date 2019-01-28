@@ -89,6 +89,7 @@ public class Camera extends ReactContextBaseJavaModule{
         imageFilePath = image.getAbsolutePath();
         return image;
     }
+    
     @Override
     public String getName() {
         return "CheckLocationServiceIsEnabled";
